@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Book Details</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      const books = [
+        {
+          title: "The Great Gatsby",
+          author: "F. Scott Fitzgerald",
+          publicationYear: 1925,
+          genres: ["Fiction", "Classics"]
+        },
+        {
+          title: "To Kill a Mockingbird",
+          author: "Harper Lee",
+          publicationYear: 1960,
+          genres: ["Fiction", "Coming-of-Age"]
+        }
+      ];
+
+      let output = "";
+      output += "Title of the first book: " + books[0].title + "<br>";
+      output += "Author of the second book: " + books[1].author + "<br>";
+      output += "Genres of all books: " + books.map(book => book.genres.join(", ")).join("; ") + "<br>";
+
+      $("#bookDetails").html(output); // Add the output to a paragraph with ID "bookDetails"
+    });
+  </script>
+</head>
+<body>
+  <p id="bookDetails"></p>
+</body>
+</html>
+
